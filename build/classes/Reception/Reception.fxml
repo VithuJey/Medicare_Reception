@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.ReceptionController">
+   <left>
+      <VBox prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: #0d4fdd;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="72.0" prefWidth="320.0" />
+            <Label prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: white;" stylesheets="@css.css" text="   RECEPTION" textAlignment="CENTER" textFill="#0d4fdd">
+               <font>
+                  <Font name="Oswald Light" size="36.0" />
+               </font>
+               <graphic>
+                  <JFXButton ripplerFill="WHITE" text=" " textFill="WHITE" />
+               </graphic>
+            </Label>
+            <Label prefHeight="60.0" prefWidth="320.0" />
+            <JFXButton fx:id="btnDash" buttonType="RAISED" onAction="#handleButtonAction" onMouseClicked="#dashboard" prefHeight="83.0" prefWidth="320.0" ripplerFill="WHITE" text=" DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VIEW_QUILT" size="45" wrappingWidth="60.0" />
+               </graphic>
+               <padding>
+                  <Insets left="-30.0" right="4.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnBook" buttonType="RAISED" onAction="#handleButtonAction" onMouseClicked="#book" prefHeight="78.0" prefWidth="320.0" ripplerFill="WHITE" text="BOOKING" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="CHECKBOX_MARKED_OUTLINE" size="40" wrappingWidth="65.0" />
+               </graphic>
+               <padding>
+                  <Insets left="-50.0" right="10.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnPat" buttonType="RAISED" ellipsisString="0" graphicTextGap="0.0" onAction="#handleButtonAction" onMouseClicked="#patient" prefHeight="79.0" prefWidth="320.0" ripplerFill="WHITE" text="  PATIENT DETAILS" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="40" wrappingWidth="60.0" />
+               </graphic>
+               <padding>
+                  <Insets left="20.0" right="13.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnDoc" onAction="#handleButtonAction" onMouseClicked="#doctor" prefHeight="80.0" prefWidth="320.0" ripplerFill="WHITE" text=" DOCTOR DETAILS" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="LOUPE" size="40" wrappingWidth="60.0" />
+               </graphic>
+               <padding>
+                  <Insets left="20.0" right="12.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btnCom" buttonType="RAISED" onAction="#handleButtonAction" onMouseClicked="#complaint" prefHeight="80.0" prefWidth="320.0" ripplerFill="WHITE" text="COMPLAINT" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="MESSAGE_TEXT" size="40" wrappingWidth="65.0" />
+               </graphic>
+               <padding>
+                  <Insets left="-25.0" right="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: white;" stylesheets="@css.css">
+               <children>
+                  <ImageView fitHeight="73.0" fitWidth="308.0" layoutX="6.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Medicare%20(7).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <ImageView fitHeight="536.0" fitWidth="863.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@images/doctor-clinic-illustration_1270-69.jpg" />
+         </image>
+      </ImageView>
+   </center>
+</BorderPane>

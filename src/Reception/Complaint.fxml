@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1620.0" stylesheets="@css/css.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.ComplaintController">
+   <children>
+      <Pane layoutX="100.0" layoutY="89.0" prefHeight="361.0" prefWidth="1420.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="307.0" layoutY="15.0" text="Complainer Role">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="307.0" layoutY="99.0" text="Complainer Name">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="863.0" layoutY="15.0" text="Complainee Role">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="863.0" layoutY="99.0" text="Complinee Name">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="307.0" layoutY="169.0" text="Complaint">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cb1" layoutX="307.0" layoutY="45.0" prefWidth="250.0" />
+            <JFXTextField fx:id="crna" layoutX="307.0" layoutY="128.0" prefColumnCount="13" prefHeight="29.0" prefWidth="250.0" />
+            <JFXComboBox fx:id="cb2" layoutX="863.0" layoutY="45.0" prefWidth="250.0" />
+            <JFXTextField fx:id="cena" layoutX="863.0" layoutY="128.0" prefColumnCount="13" prefHeight="29.0" prefWidth="250.0" />
+            <JFXTextArea fx:id="com" layoutX="310.0" layoutY="204.0" prefHeight="79.0" prefWidth="812.0" />
+            <Label fx:id="emptyAlert" layoutX="650.0" layoutY="10.0" prefHeight="35.0" prefWidth="175.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="633.0" layoutY="302.0" onAction="#handleInsertButton" prefHeight="40.0" prefWidth="160.0" styleClass="b3" text="INSERT">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutY="22.0" prefHeight="45.0" prefWidth="1620.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="748.0" text="Complainnt">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="100.0" layoutY="464.0" prefHeight="384.0" prefWidth="1420.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="629.0" layoutY="331.0" onAction="#loadDataFromDatabase" prefHeight="40.0" prefWidth="160.0" styleClass="b3" text="RELOAD">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="ComTable" fixedCellSize="0.0" layoutX="38.0" layoutY="19.0" prefHeight="300.0" prefWidth="1341.0">
+               <columns>
+                  <TableColumn fx:id="cid" maxWidth="2000.0" minWidth="30.0" prefWidth="88.0" text="CID" />
+                  <TableColumn fx:id="date" maxWidth="2000.0" minWidth="12.0" prefWidth="145.0" text="Date" />
+                  <TableColumn fx:id="columnComplainer" maxWidth="2000.0" minWidth="0.0" prefWidth="150.0" text="Complainer" />
+                  <TableColumn fx:id="columnComplainerRole" maxWidth="2000.0" minWidth="12.0" prefWidth="117.33331298828125" text="Job" />
+                  <TableColumn fx:id="columnComplainee" maxWidth="2000.0" minWidth="50.0" prefWidth="164.66668701171875" text="Complainee" />
+                  <TableColumn fx:id="columnComplaineeRole" prefWidth="124.33331298828125" text="Job" />
+                  <TableColumn fx:id="complaint" prefWidth="546.0" text="Complaint" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

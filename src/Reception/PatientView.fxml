@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1620.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.PatientViewController">
+   <children>
+      <JFXButton fx:id="patientAdd" buttonType="RAISED" layoutX="285.0" layoutY="770.0" onAction="#handleADD" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" styleClass="b3" stylesheets="@css/css.css" text="INSERT">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="patientEdit" buttonType="RAISED" layoutX="730.0" layoutY="770.0" onAction="#handleUPDATE" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" styleClass="b3" stylesheets="@css/css.css" text="EDIT">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1175.0" layoutY="770.0" onAction="#handleDelete" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" styleClass="b3" stylesheets="@css/css.css" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="80.0" layoutY="138.0" prefHeight="565.0" prefWidth="720.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <TableView fx:id="tableUser" layoutX="33.0" layoutY="69.0" onSort="#loadDataFromDatabase" prefHeight="466.0" prefWidth="652.0">
+              <columns>
+                <TableColumn fx:id="columnName" prefWidth="257.0" text="Name" />
+                <TableColumn fx:id="columnGender" minWidth="0.0" prefWidth="234.0" text="Gender" />
+                  <TableColumn fx:id="columnPhone" minWidth="0.0" prefWidth="158.0" text="Age" />
+              </columns>
+            </TableView>
+            <JFXComboBox fx:id="patient" focusColor="#3d6eff" layoutX="112.0" layoutY="21.0" prefHeight="31.0" prefWidth="455.0" promptText="Search Patient" styleClass="combo-box" />
+            <JFXButton layoutX="570.0" layoutY="13.0" onAction="#searchDataFromDatabase" prefHeight="45.0" prefWidth="54.0" styleClass="t2" stylesheets="@css/css.css" text=" ">
+               <graphic>
+                  <MaterialDesignIconView glyphName="MAGNIFY" onDragDetected="#searchDataFromDatabase" size="35" wrappingWidth="29.000004649162292">
+                     <styleClass>
+                        <String fx:value="l6" />
+                        <String fx:value="l6" />
+                     </styleClass></MaterialDesignIconView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="820.0" layoutY="138.0" prefHeight="565.0" prefWidth="720.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <GridPane layoutX="100.0" layoutY="173.0" prefHeight="346.0" prefWidth="520.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="291.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="229.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="39.0" prefWidth="125.0" text="Name" />
+                  <Label text="Gender" GridPane.rowIndex="1" />
+                  <Label fx:id="labName" text="Patient's Name" GridPane.columnIndex="1" />
+                  <Label fx:id="labGender" text="Patient's Gender" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Date Of Birth" GridPane.rowIndex="2" />
+                  <Label fx:id="labDOB" text="Patient's Date Of Birth" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Address" GridPane.rowIndex="6" />
+                  <Label fx:id="labAddress" text="Patient's Address" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Age" GridPane.rowIndex="3" />
+                  <Label text="Occupation" GridPane.rowIndex="4" />
+                  <Label text="Marital Status" GridPane.rowIndex="5" />
+                  <Label fx:id="labAge" text="Patient's Age" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="labJob" text="Patient's Job " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="labMarital" text="Patient's Marital Status" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Phone" GridPane.rowIndex="7" />
+                  <Label fx:id="labPhone" text="Patient's Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="E-Mail" GridPane.rowIndex="8" />
+                  <Label fx:id="labEmail" text="Patient's E-Mail " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               </children>
+            </GridPane>
+            <ImageView fitHeight="133.0" fitWidth="144.0" layoutX="294.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@images/xzc.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutY="11.0" prefHeight="45.0" prefWidth="1620.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="730.0" text="Patient Details">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>

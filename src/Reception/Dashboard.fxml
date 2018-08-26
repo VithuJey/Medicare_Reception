@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="870.0" prefWidth="1620.0" stylesheets="@css/css.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.DashboardController">
+   <children>
+      <AnchorPane layoutX="98.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="122.0" text="DOCTOR">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="docLab" layoutX="14.0" layoutY="37.0" text="16" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView glyphName="HOSPITAL" layoutX="150.0" layoutY="44.0" size="45" styleClass="l3" text="" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="342.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="122.0" text="NURSE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nurLab" layoutX="14.0" layoutY="37.0" text="18" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="148.0" layoutY="43.0" size="50" styleClass="l3" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="586.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="145.0" text="LABORATORIST">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labLab" layoutX="14.0" layoutY="37.0" text="22" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="FLASK" layoutX="153.0" layoutY="43.0" size="50" styleClass="l3" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="828.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="122.0" text="PHARMACIST">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="pharmLab" layoutX="14.0" layoutY="37.0" text="3" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView glyphName="AV_TIMER" layoutX="149.0" layoutY="44.0" size="50" styleClass="l3" wrappingWidth="51.0" />
+         </children>
+      </AnchorPane>
+      <Pane layoutY="22.0" prefHeight="45.0" prefWidth="1620.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="762.0" text="Overview">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="210.0" prefHeight="45.0" prefWidth="1620.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="347.0" layoutY="2.0" prefHeight="45.0" prefWidth="110.0" text="Bookings">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="1164.0" layoutY="-3.0" prefHeight="45.0" prefWidth="76.0" text="Memo">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+            <Separator layoutX="807.0" orientation="VERTICAL" prefHeight="45.0" prefWidth="6.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="53.0" layoutY="275.0" prefHeight="550.0" prefWidth="730.0" style="-fx-background-radius: 20; -fx-background-color: white;">
+         <children>
+            <TableView fx:id="bookTable" layoutX="25.0" layoutY="27.0" onSort="#loadDataFromDatabase" prefHeight="500.0" prefWidth="680.0">
+               <columns>
+                  <TableColumn fx:id="referCol" prefWidth="102.0" text="Reference No" />
+                  <TableColumn fx:id="appNo" minWidth="4.0" prefWidth="126.0" text="Appointment No" />
+                  <TableColumn fx:id="docCol" minWidth="0.0" prefWidth="114.0" text="Doctor Name" />
+                  <TableColumn fx:id="patCol" prefWidth="117.0" text="Patient Name" />
+                  <TableColumn fx:id="payCol" prefWidth="101.0" text="Pay Status" />
+                  <TableColumn fx:id="arrCol" prefWidth="119.0" text="Arrive Status" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="1072.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="122.0" text="MANAGER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="manageLab" layoutX="14.0" layoutY="37.0" text="3" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView glyphName="WORKER" layoutX="150.0" layoutY="47.0" size="50" styleClass="l3" text="" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1322.0" layoutY="88.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="64.0" prefHeight="31.0" prefWidth="122.0" text="STAFF">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="staffLab" layoutX="14.0" layoutY="37.0" text="3" textFill="#646464">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="COG" layoutX="155.0" layoutY="44.0" size="50" styleClass="l3" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="836.0" layoutY="274.0" prefHeight="550.0" prefWidth="730.0" style="-fx-background-radius: 20; -fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="33.0" layoutY="25.0" prefHeight="500.0" prefWidth="665.0">
+               <children>
+                  <AnchorPane id="AnchorPane" fx:id="memoRoot" prefHeight="80.0" prefWidth="665.0" style="-fx-background-radius: 5; -fx-background-color: #e0e0e0;">
+                     <children>
+                        <JFXDatePicker fx:id="dateP" defaultColor="BLACK" layoutX="14.0" layoutY="20.0" prefHeight="31.0" prefWidth="114.0" />
+                        <JFXTextField fx:id="text" focusColor="WHITE" layoutX="145.0" layoutY="19.0" prefHeight="31.0" prefWidth="417.0" unFocusColor="BLACK" />
+                        <Separator layoutX="128.0" orientation="VERTICAL" prefHeight="123.0" prefWidth="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="0.0" />
+                        <JFXButton fx:id="add" buttonType="RAISED" contentDisplay="CENTER" layoutX="585.0" layoutY="8.0" onAction="#handleAddNote" prefHeight="60.0" prefWidth="69.0" ripplerFill="#c6c6c6" style="-fx-background-color: white; -fx-background-insets: 0; -fx-background-radius: 30;" styleClass="b1" text=" " textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView fill="#003cff" glyphName="PLUS" size="45" />
+                           </graphic>
+                        </JFXButton>
+                        <Separator layoutX="573.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="573.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <ListView fx:id="eventList" layoutY="80.0" prefHeight="420.0" prefWidth="665.0" style="-fx-background-radius: 3;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

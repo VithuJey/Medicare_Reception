@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.BookingAddController">
+   <children>
+      <Pane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="174.0" text="Book New Appointment">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXComboBox fx:id="doctor" layoutX="320.0" layoutY="130.0" onMouseClicked="#addDoctor" prefWidth="190.0" promptText="Choose a name" />
+      <JFXComboBox fx:id="patient" layoutX="320.0" layoutY="200.0" prefWidth="190.0" promptText="Choose a name" />
+      <JFXComboBox fx:id="appDa" layoutX="320.0" layoutY="270.0" onMouseClicked="#addAppDate" prefWidth="190.0" promptText="Choose a date" />
+      <JFXComboBox fx:id="appNo" layoutX="320.0" layoutY="340.0" onMouseClicked="#addAppNo" prefWidth="190.0" promptText="Choose a number" />
+      <Label fx:id="appTime" alignment="CENTER" layoutX="320.0" layoutY="410.0" onMousePressed="#addAppTime" prefHeight="30.0" prefWidth="190.0" style="-fx-background-color: white;" text="Time (24 Hrs Clock)" textAlignment="CENTER" />
+      <Label fx:id="payAmo" alignment="CENTER" layoutX="320.0" layoutY="480.0" onMousePressed="#addPayAmo" prefHeight="30.0" prefWidth="190.0" style="-fx-background-color: white;" text="DocFee + HosFee = TotFee" textAlignment="CENTER" />
+      <JFXComboBox fx:id="paySta" layoutX="320.0" layoutY="550.0" onMousePressed="#addPayStatus" prefWidth="190.0" promptText="Choose a status" />
+      <JFXComboBox fx:id="arrSta" layoutX="320.0" layoutY="620.0" onMousePressed="#addArriveStatus" prefWidth="190.0" promptText="Choose a status" />
+      <JFXButton fx:id="book" buttonType="RAISED" layoutX="222.0" layoutY="713.0" onAction="#handleInsertButton" prefHeight="40.0" prefWidth="160.0" ripplerFill="WHITE" styleClass="b3" stylesheets="@css/css.css" text="BOOK">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="95.0" layoutY="130.0" text="Doctor Name">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="200.0" text="Patient Name">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="emptyAlert" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="73.0" prefHeight="30.0" prefWidth="200.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="DocNameAlert" alignment="CENTER" layoutX="312.0" layoutY="163.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="PatNameAlert" alignment="CENTER" layoutX="312.0" layoutY="229.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AppDateAlert" alignment="CENTER" layoutX="310.0" layoutY="301.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AppNoAlert" alignment="CENTER" layoutX="310.0" layoutY="371.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AppTimeAlert" alignment="CENTER" layoutX="320.0" layoutY="440.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="PayAmoAlert" alignment="CENTER" layoutX="320.0" layoutY="510.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="PayStaAlert" alignment="CENTER" layoutX="310.0" layoutY="581.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AppStaAlert" alignment="CENTER" layoutX="310.0" layoutY="651.0" prefHeight="30.0" prefWidth="190.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="268.0" text="Appointment Date">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="338.0" text="Appointment No">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="408.0" text="Appointment Time">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="478.0" text="Pay Amount">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="548.0" text="Pay Status">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="618.0" text="Appointment Status">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

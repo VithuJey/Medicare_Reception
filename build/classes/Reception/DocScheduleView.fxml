@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reception.DocScheduleViewController">
+   <children>
+      <TableView fx:id="dailyScheduleTable" fixedCellSize="0.0" layoutX="50.0" layoutY="82.0" prefHeight="380.0" prefWidth="1100.0">
+         <columns>
+            <TableColumn fx:id="sidColumn" maxWidth="2000.0" minWidth="30.0" prefWidth="88.0" text="SID" />
+            <TableColumn fx:id="roomNoColumn" maxWidth="2000.0" minWidth="12.0" prefWidth="147.0" text="Room Number" />
+            <TableColumn fx:id="docIdColumn" maxWidth="2000.0" minWidth="0.0" prefWidth="166.0" text="Doctor ID" />
+            <TableColumn fx:id="startTimeColumn" maxWidth="2000.0" minWidth="12.0" prefWidth="176.0" text="Start Time" />
+            <TableColumn fx:id="endTimeColumn" maxWidth="2000.0" minWidth="50.0" prefWidth="250.0" text="End Time" />
+            <TableColumn fx:id="maxBookingLimitColumn" prefWidth="269.0" text="Max. Booking Limit" />
+         </columns>
+         
+            <TableView />
+         
+      </TableView>
+      <Pane prefHeight="45.0" prefWidth="1200.0" style="-fx-background-color: #c1d9ff;">
+         <children>
+            <Label layoutX="511.0" text="Doctor Schedule">
+               <font>
+                  <Font name="Oswald Medium" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

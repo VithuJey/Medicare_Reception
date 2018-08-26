@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="600.0" style="-fx-background-radius: 0;" styleClass="b2" stylesheets="@css/css.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="14.0" layoutY="13.0" prefHeight="415.0" prefWidth="572.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+Bookings can be made uoto maximum bookings(appointment number restrictions &amp; time slot are there) in a day" wrappingWidth="547.6708984375" />
+            <Text layoutX="12.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+Can not change doctor or patient after booking the appointment on a specific appointment day." wrappingWidth="547.6708984375" />
+            <Text layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+But can cancel the booking before 2 days of the appointment day. Booking can be edited due to any human error." wrappingWidth="547.6708984375" />
+            <Text layoutX="12.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+Claim requests are accepted on the following basis;" wrappingWidth="547.6708984375" />
+            <Text layoutX="12.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--Claim requests for direct booking, need to come before the session start time and the refund will be made in two (2) working days if the patient bring the appointment invoice." wrappingWidth="547.6708984375" />
+            <Text layoutX="12.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--The Claim requests for direct booking will not be accepted after the session start and the Company is not liable for any refund pertaining to patients’ appointment after missing the allocated time." wrappingWidth="547.6708984375" />
+            <Text layoutX="12.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Any issues related to cash transactions or executive decisions of the Clinic is managed by the Administrator of the MEDICARE CLINIC." wrappingWidth="547.6708984375" />
+            <Label layoutX="109.0" layoutY="14.0" prefHeight="30.0" prefWidth="358.0" text="APPOINTMENT BOOKING RULES">
+               <font>
+                  <Font name="Aller" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
